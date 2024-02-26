@@ -75,7 +75,21 @@ void roundRobin (int n, int timeQuantum) {
     }
 
     //Execution of the current process
-    
+    if (currentPosition != -1) {
+      processes[currentPosition].remainingTime--;
+      processes[currentPosition].turnaroundTime++;
+      if (processes[currentPosition].remainingTime == 0) {
+        remainingProcesses--;
+        localTime = -1;
+        currentPosition = -1;
+      }
+    } else
+      localTime = -1;
+
+    time++;
+    localTime = (localTime + 1) % timeQuantum;
+
+    //Loop for enqueue processes arriving at the current time
   }
 }
 
