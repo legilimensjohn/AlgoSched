@@ -117,7 +117,27 @@ void roundRobin (int n, int timeQuantum) {
 }
 
 //Function for Non-Preemptive Priority Scheduling
-void priorityScheduling ()
+void priorityScheduling () {
+  int i, j, currentTime = 0;
+  int n = 7;
+  CustomProcess processes[7];
+
+  //Input process details
+  for (i = 0; i < n; i++) {
+    cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
+        while (!(cin >> processes[i].arrivalTime)) {
+            cout << "\tInvalid input. Please enter a valid integer for arrival time: ";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+  }
+
+    cout << "\tEnter burst time for Process " << i + 1 << "      : ";
+        while (!(cin >> processes[i].burstTime)) {
+            cout << "\tInvalid input. Please enter a valid integer for burst time: ";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+ }
+}
 
 
 
