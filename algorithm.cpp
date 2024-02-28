@@ -90,7 +90,12 @@ void roundRobin (int n, int timeQuantum) {
     localTime = (localTime + 1) % timeQuantum;
 
     //Loop for enqueue processes arriving at the current time
+    for (int j = 0; j < n; j++)
+      if (processes [j].arrivalTime == time)
+        enqueue(j);
   }
+
+  //Displaying process details after completion of all processes
 }
 
 
