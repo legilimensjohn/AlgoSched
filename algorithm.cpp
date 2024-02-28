@@ -96,8 +96,28 @@ void roundRobin (int n, int timeQuantum) {
   }
 
   //Displaying process details after completion of all processes
+  cout << endl;
+  cout << "Process    Arrival Time      Burst Time      Waiting Time     Turnaround Time      " << endl;
+
+  for (int i = 0; i < n; i++) {
+     cout << processes[i].id << "\t\t" << processes[i].arrivalTime << "\t\t";
+     cout << processes[i].burstTime << "\t\t" << processes[i].waitingTime << "\t\t" << processes[i].turnaroundTime << endl;
+     totalTurnaroundTime += processes[i].turnaroundTime;
+     totalWaitTime += processes[i].waitingTime;
+  }
+
+  //Calculate average waiting time and average turnaround time
+  totalTurnaroundTime /= (1.0 * n);
+  totalWaitTime /= (1.0 * n);
+
+  //Display average waiting time and turnaround time
+  cout << endl << endl;
+  cout << "\t\tAverage Waiting Time     : " << totalWaitTime << endl;
+  cout << "\t\tAverage Turn-Around Time : " << totalTurnaroundTime << endl << endl;
 }
 
+//Function for Non-Preemptive Priority Scheduling
+void priorityScheduling ()
 
 
 
