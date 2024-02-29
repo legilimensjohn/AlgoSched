@@ -129,14 +129,23 @@ void priorityScheduling () {
             cout << "\tInvalid input. Please enter a valid integer for arrival time: ";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-  }
+    }
 
     cout << "\tEnter burst time for Process " << i + 1 << "      : ";
         while (!(cin >> processes[i].burstTime)) {
             cout << "\tInvalid input. Please enter a valid integer for burst time: ";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
- }
+    }
+
+    cout << "\Enter priority for Process (Lower # = higher priority) " << i + 1 << ": ";
+        while (!(cin >> processes[i].priority)) {
+            cout << "\tInvalid input. Please enter a valid integer for priority: ";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+    }
+
+    processes
 }
 
 
