@@ -163,6 +163,17 @@ for (i = 0; i < n - 1; i++) {
 }
 
 //Displaying process details for priority scheduling
+cout << endl << endl;
+cout << setw(10) << "Process" << setw(15) << "Arrival Time" << setw(15) << "Burst Time" << setw(10) << "Priority" << setw(15) << "Finish Time" << setw(20) << "Turnaround Time" << setw(15) << "Waiting Time" << endl;
+
+for(i = 0; i < n; i++) {
+  //Waiting for the arrival of the current process
+  while (currentTime < processes[i].arrivalTime) {
+    currentTime++;
+  }
+
+  cout << setw(10) << processes[i].id << setw(15) << processes[i].arrivalTime << setw(15) << processes[i].burstTime << setw(10) << processes[i].priority;
+}
 
 
 
