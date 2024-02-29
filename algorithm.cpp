@@ -145,7 +145,19 @@ void priorityScheduling () {
             cin.ignore(INT_MAX, '\n');
     }
 
-    processes
+    processes[i].id = i + 1;
+    processes[i].waitingTime = 0;
+    processes[i].turnaroundTime = 0;
+    cout << endl;
+}
+
+//Sort processe based on priority
+for (i = 0; i < n - 1; i++) {
+  for (j = 0; j < n - i - 1; j++) {
+    if (processes[j].priority > processes[j + 1].priority) {
+      
+    }
+  }
 }
 
 
