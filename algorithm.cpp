@@ -155,11 +155,14 @@ void priorityScheduling () {
 for (i = 0; i < n - 1; i++) {
   for (j = 0; j < n - i - 1; j++) {
     if (processes[j].priority > processes[j + 1].priority) {
-      
+      CustomProcess temp = processes[j];
+      processes[j] = processes[j+1];
+      processes[j+1] = temp;
     }
   }
 }
 
+//Displaying process details for priority scheduling
 
 
 
