@@ -202,6 +202,29 @@ void srtfScheduling (int n) {
   int shortestRemainingTime = -1;
 
   //Loop until all processes are completed
+  while (completed !=n) {
+    shortestRemainingTime = -1;
+    int minRemainingTime = numeric_limits < int > :: max();
+
+    //Find the process with the shortest remaining time
+    for (int i = 0; i < n; i++) {
+      if (processes[i].arrivalTime <= currentTime && processes[i].remainingTime < minRemainingTime && processes[i].remainingTime > 0) {
+        shortestRemainingTime = i;
+        minRemainingTime = processes[i].remainingTime;
+      }
+    }
+
+    //If no process is ready, move to the next time unit
+    if (shortestRemainingTime == -1) {
+      currentTime ++;
+    } else {
+      //Execute the process for one time unit
+      processes[shortesRemainingTime].remainingTime--;
+      currentTime++;
+
+      //If the process is completed, update turnaround and waiting times
+    }
+  }
 }
 
 
