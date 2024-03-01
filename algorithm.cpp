@@ -173,8 +173,23 @@ for(i = 0; i < n; i++) {
   }
 
   cout << setw(10) << processes[i].id << setw(15) << processes[i].arrivalTime << setw(15) << processes[i].burstTime << setw(10) << processes[i].priority;
+  //Updating waiting and turnaround times for the current process
+        processes[i].waitingTime = currentTime - processes[i].arrivalTime;
+        currentTime += processes[i].burstTime;
+        processes[i].turnaroundTime = currentTime - processes[i].arrivalTime;
+
+        cout << setw(15) << currentTime << setw(20) << processes[i].turnaroundTime << setw(15) << processes[i].waitingTime << endl;
 }
 
+//Calculating average waiting and turnaround times
+float avgWaitingTime = 0, avgTurnaroundTime = 0;
+for (i = 0; i < n; i++) {
+  avgWaitingTime += processes[i].waitingTime;
+  avgTurnaroundTime += processes[i].turnaroundTime;
+}
+avgWaitingTime /= n;
+avgTurnaroundTime /= n;
+cout << endl << endl;
 
 
 
