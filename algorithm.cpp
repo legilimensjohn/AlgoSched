@@ -191,6 +191,19 @@ avgWaitingTime /= n;
 avgTurnaroundTime /= n;
 cout << endl << endl;
 
+//Display average waiting time and average turnaround time
+cout << "\t\tAverage Waiting Time        : " << avgWaitingTime << endl;
+cout << "\t\tAverage Turn Around Time    : " << avgTurnaroundTime << endl;
+
+//Function for Shortest Remaining Time First (SRTF)
+void srtfScheduling (int n) {
+  int currentTime = 0;
+  int completed = 0;
+  int shortestRemainingTime = -1;
+
+  //Loop until all processes are completed
+}
+
 
 
 
