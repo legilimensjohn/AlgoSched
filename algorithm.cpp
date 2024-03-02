@@ -232,8 +232,29 @@ void srtfScheduling (int n) {
   }
 
   //Display process details in tabular format outside the loop
+  cout << "Process\t\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time\n";
+  for (int i = 0; i < n; i++) {
+    cout << processes[i].id << "\t\t" << processes[i].arrivalTime << "\t\t" << processes[i].burstTime << "\t\t" << processes[i].waitingTime << "\t\t" << processes[i].turnaroundTime << endl;
+  }
+
+  //Calculate and display average waiting and turnaround times
+  float avgWaitingTime = 0, abgturnaroundTime = 0;
+  for (int i = 0; i < n; i++) {
+    avgWaitingTime += processes[i].waitingTime;
+        avgTurnaroundTime += processes[i].turnaroundTime;
+  }
+  avgWaitingTime /= n;
+  avgTurnaroundTime /= n;
+  cout << "\n\n"
+    //Display average waiting time and average turnaround time
+    cout << "\t\tAverage Waiting Time     : " << avgWaitingTime << endl;
+    cout << "\t\tAverage Turn-Around Time : " << avgTurnaroundTime << endl << endl;
 }
 
+//Function for First Come First Served (FCFS) Scheduling
+void fcfsScheduling (int n) {
+  //Sort processes based on arrival time for First Come First Serve Scheduling
+}
 
 
 
