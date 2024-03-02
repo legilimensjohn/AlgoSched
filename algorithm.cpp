@@ -254,6 +254,20 @@ void srtfScheduling (int n) {
 //Function for First Come First Served (FCFS) Scheduling
 void fcfsScheduling (int n) {
   //Sort processes based on arrival time for First Come First Serve Scheduling
+   for (int i = 0; i < n - 1; i++) {
+     for (int j = 0; j < n - i - 1; j++) {
+       if (processes[j].arrivalTime > processes[j + 1].arrivalTime) {
+         CustomProcess temp = processes[j];
+         processes[j] = processes[j + 1];
+         processes[j + 1] = temp;
+       } 
+     }
+   }
+
+  int currentTime = 0;
+
+  //Display header for the process details table
+  
 }
 
 
