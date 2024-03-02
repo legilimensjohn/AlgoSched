@@ -223,8 +223,15 @@ void srtfScheduling (int n) {
       currentTime++;
 
       //If the process is completed, update turnaround and waiting times
+      if (processes[shortestRemainingTime].remainingTime == 0) {
+        completed++;
+        processes[shortesReamainingTime].turnaround = currentTime - processes[shortestRemainingTime].arrivalTime;
+        processes[shortestRemainingTime].waitingTime = processes[shortestRemainingTime].turnaroundTime - processes[shortestRemainingTime].burstTime;
+      }
     }
   }
+
+  //Display process details in tabular format outside the loop
 }
 
 
