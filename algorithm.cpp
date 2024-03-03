@@ -308,6 +308,11 @@ void fcfsScheduling (int n) {
 
     do {
       //Display the main menu for scheduling algorithms
+      cout << "\n";
+      cout << "\t\t|+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|\n";
+      cout << "\t\t|          Welcome to the realm of ALGORITHM SCHEDULING!                      |\n";
+      
+      
 
 
     }
