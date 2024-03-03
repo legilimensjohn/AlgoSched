@@ -267,7 +267,40 @@ void fcfsScheduling (int n) {
   int currentTime = 0;
 
   //Display header for the process details table
+  cout << "Process\t\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time\n";
   
+  for (int i = 0; i < n; i++) {
+  //Wait for the arrival of the current process
+    while (currentTime < processes[i].arrivalTime) {
+      currentTime++;
+    }
+
+    //Display process details in tabular format
+    cout << processes[i].id << "\t\t" << processes[i].arrivalTime << "\t\t" << processes[i].burstTime << "\t\t";
+    
+     //Update waiting and turnaround times for the current process
+     processes[i].waitingTime = currentTime - processes[i].arrivalTime;
+     currentTime += processes[i].burstTime;
+     processes[i].turnaroundTime = currentTime - processes[i].arrivalTime;
+     cout << processes[i].waitingTime << "\t\t" << processes[i].turnaroundTime << endl;   
+  }
+
+  //Calculate and display average waiting and turnaround times
+  float avgWaitingTime = 0, avgTurnaroundTime = 0;
+  for (int i = 0; i < n; i++) {
+    avgWaitingTime += processes[i].waitingTime;
+    avgTurnaroundTime += processes[i].turnaroundTime;
+  }
+  avgWaitingTime /=n;
+  avgTurnaroundTime /= n;
+  cout << "\n\n";
+  //
+    
+  }
+
+
+
+    
 }
 
 
