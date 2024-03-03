@@ -294,10 +294,30 @@ void fcfsScheduling (int n) {
   avgWaitingTime /=n;
   avgTurnaroundTime /= n;
   cout << "\n\n";
-  //
+  //Display average waiting time and average turnaround time
+  cout << "\t\tAverage Waiting Time    : " << avgWaitingTime << endl;
+  cout << "\t\tAverage Turn-Around Time: " << avgTurnaroundTime << endl << endl;
+}
+
+  int main() {
+    //Variables for user input and control flow
+    int choice;
+    int timeQuantum;
+    char tryAgain;
+    system("Color 2");    //Set console text color to green
+
+    do {
+      //Display the main menu for scheduling algorithms
+
+
+    }
+
+
+
     
   }
 
+  
 
 
     
