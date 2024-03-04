@@ -333,6 +333,31 @@ void fcfsScheduling (int n) {
         }
 
       cout << endl;
+
+      //Execute the chosen algorithm
+      switch (choice) {
+        case 1:
+        cout << endl << endl;
+        cout << "\t  ROUND ROBIN" << endl;
+        cout << "\t===============" << endl << endl;
+        for (int i = 0; i < 7; i++) {
+          cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
+          while (!(cin >> processes[i].arrivalTime)) {
+            cin.clear();
+            cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+            cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
+          }
+
+          cout << "\tEnter the burst time for process"
+          
+
+          
+        }
+        
+
+
+        
+      }
       
 
 
