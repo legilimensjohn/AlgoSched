@@ -311,7 +311,28 @@ void fcfsScheduling (int n) {
       cout << "\n";
       cout << "\t\t|+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|\n";
       cout << "\t\t|          Welcome to the realm of ALGORITHM SCHEDULING!                      |\n";
-      
+      cout << "\t\t|  Kindly choose one of the subsequent approaches for ALGORITHM SCHEDULING.   |\n";
+      cout << "\t\t|                                                                             |\n";
+      cout << "\t\t|     1. Embark on an enchanting adventure with Round Robin Scheduling (R.R)  |\n";
+      cout << "\t\t|     2. Delve into the realm of Non-Preemptive Priority                      |\n";
+      cout << "\t\t|     3. Uncover the marvels of Shortest Remaining Time First (S.R.T.F)       |\n";
+      cout << "\t\t|     4. Indulge in the elegance of First Come First Served (F.C.F.S)         |\n";
+      cout << "\t\t|     5. Exit the program                                                     |\n";
+      cout << "\t\t|+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|\n";
+      cout << "\n\n";
+
+      //Prompt user for algorithm choice
+      cout << "\t\tPlease indicate your preference by selecting a number from the options provided: ";
+
+      //Validate and get user input for algorithm choice
+       while (!(cin >> choice) || choice < 1 || choice > 5) {
+         cin.clear();
+          cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+          cout << "\t\t\tApologies, but it seems that the input provided is not valid." << endl;
+          cout << "\t\t\t\tPlease enter a number between 1 and 5: ";
+        }
+
+      cout << endl;
       
 
 
