@@ -348,7 +348,17 @@ void fcfsScheduling (int n) {
             cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
           }
 
-          cout << "\tEnter the burst time for process"
+          cout << "\tEnter the burst time for process    " << i + 1 << ": ";
+          while (!(cin >> processes[i].burstTime)) {
+            cin.clear();
+            cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+            cout << "\tInvalid input. Please enter a valid integer for the burst time: ";
+          }
+          processes[i].id = i + 1;
+          processes[i].waitingTime = 0;
+          processes[i].turnaroundTime = 0;
+          processes[i].remainingTime = processes[i].int burstTime;
+          
           
 
           
