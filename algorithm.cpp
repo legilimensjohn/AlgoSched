@@ -337,37 +337,79 @@ void fcfsScheduling (int n) {
       //Execute the chosen algorithm
       switch (choice) {
         case 1:
-        cout << endl << endl;
-        cout << "\t  ROUND ROBIN" << endl;
-        cout << "\t===============" << endl << endl;
-        for (int i = 0; i < 7; i++) {
-          cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
-          while (!(cin >> processes[i].arrivalTime)) {
-            cin.clear();
-            cin.ignore(numeric_limits < streamsize > ::max(), '\n');
-            cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
+          cout << endl << endl;
+          cout << "\t  ROUND ROBIN" << endl;
+          cout << "\t===============" << endl << endl;
+          for (int i = 0; i < 7; i++) {
+            cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
+            while (!(cin >> processes[i].arrivalTime)) {
+              cin.clear();
+              cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+              cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
           }
 
-          cout << "\tEnter the burst time for process    " << i + 1 << ": ";
-          while (!(cin >> processes[i].burstTime)) {
-            cin.clear();
-            cin.ignore(numeric_limits < streamsize > ::max(), '\n');
-            cout << "\tInvalid input. Please enter a valid integer for the burst time: ";
+            cout << "\tEnter the burst time for process    " << i + 1 << ": ";
+            while (!(cin >> processes[i].burstTime)) {
+              cin.clear();
+              cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+              cout << "\tInvalid input. Please enter a valid integer for the burst time: ";
           }
-          processes[i].id = i + 1;
-          processes[i].waitingTime = 0;
-          processes[i].turnaroundTime = 0;
-          processes[i].remainingTime = processes[i].int burstTime;
-          
-          
-
-          
+            processes[i].id = i + 1;
+            processes[i].waitingTime = 0;
+            processes[i].turnaroundTime = 0;
+            processes[i].remainingTime = processes[i].int burstTime;
+            cout << endl; 
         }
-        
 
+          cout << "/tEnter the time quantum: "
+          while (!(cin >> timeQuantum) || timeQuantum <= 0) {
+            cin.clear();
+            cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+            cout << "\tInvalid input. Please enter a valid positive integer for the time quantum: ";
+        }
+          roundRobin(7, timeQuantum);
+          break;
 
-        
+        case 2:
+          cout << endl << endl;
+          cout << "\t   NON-PREEMPTIVE PRIORITY SCHEDULING" << endl;
+          cout << "\t========================================" << endl << endl;
+          priorityScheduling();
+          break;
+
+        case 3:
+          cout << endl << endl;
+          cout << "\t   SHORTEST REMAINING TIME FIRST (SRTF) SCHEDULING" << endl;
+          cout << "\t=====================================================" << endl << endl;
+          for (int i = 0; i < 7; i++) {
+            cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
+                while (!(cin >> processes[i].arrivalTime)) {
+                  cin.clear();
+                  cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+                  cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
+                }
+
+                cout << "\tEnter the burst time for Process   " << i + 1 << ": ";
+                while (!(cin >> processes[i].burstTime)) {
+                  cin.clear();
+                  cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+                  cout << "\tInvalid input. Please enter a valid integer for the burst time: ";
+                }
+
+                processes[i].id = i + 1;
+                processes[i].waitingTime = 0;
+                processes[i].turnaroundTime = 0;
+                processes[i].remainingTime = processes[i].burstTime;
+                cout << endl;  
       }
+      srtfScheduling(7);
+      break;
+
+        case 4: 
+          cout << endl << endl;
+
+
+
       
 
 
