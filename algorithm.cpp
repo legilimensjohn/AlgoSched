@@ -435,12 +435,22 @@ void fcfsScheduling (int n) {
           cout << "\n\tConcluding the program with the utmost elegance. Gratitude is extended!!\n";
           return 0;
 
+        default:
+          cout << "\tInvalid choice" << endl;
+          break;
+    }
 
-
-
-      
-
-
+    if (choice != 5) {
+      cout << "\tWould you like to give it another shot? (y/n): ";
+            cin >> tryAgain;
+            
+            // Input validation for tryAgain
+            while (cin.fail() || (tryAgain != 'y' && tryAgain != 'Y' && tryAgain != 'n' && tryAgain != 'N')) {
+                cout << "\tInvalid input. Please enter 'y' or 'n': ";
+                cin.clear(); // Clear error flag
+                cin.ignore(numeric_limits < streamsize > ::max(), '\n'); // Discard invalid input
+                cin >> tryAgain;
+            }
     }
 
 
