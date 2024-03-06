@@ -407,6 +407,34 @@ void fcfsScheduling (int n) {
 
         case 4: 
           cout << endl << endl;
+          cout << "\t  FIRST COME FIRST SERVED (FCFS) SCHEDULING" << endl;
+          cout << "\t=============================================" << endl << endl;
+          for (int i = 0; i < 7; i++) {
+            cout << "\tEnter the arrival time for Process " << i + 1 << ": ";
+                while (!(cin >> processes[i].arrivalTime)) {
+                    cin.clear();
+                    cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+                    cout << "\tInvalid input. Please enter a valid integer for the arrival time: ";
+                }
+                cout << "\tEnter the burst time for Process   " << i + 1 << ": ";
+                while (!(cin >> processes[i].burstTime)) {
+                    cin.clear();
+                    cin.ignore(numeric_limits < streamsize > ::max(), '\n');
+                    cout << "\tInvalid input. Please enter a valid integer for the burst time: ";
+                }
+                processes[i].id = i + 1;
+                processes[i].waitingTime = 0;
+                processes[i].turnaroundTime = 0;
+                processes[i].remainingTime = processes[i].burstTime;
+                cout << endl;
+          }
+          fcfsScheduling(7);
+          break;
+
+        case 5: //Exit the program
+          cout << "\n\tConcluding the program with the utmost elegance. Gratitude is extended!!\n";
+          return 0;
+
 
 
 
