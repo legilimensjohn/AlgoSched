@@ -453,19 +453,17 @@ void fcfsScheduling (int n) {
             }
     }
 
+     if (tryAgain == 'y' || tryAgain == 'Y') {
+            // Clear screen (for Windows)
+            system("cls");
+        }
+  } while (tryAgain == 'y' || tryAgain == 'Y');
 
+  while (tryAgain == 'y' || tryAgain == 'Y');
 
-    
-  }
+  cout << "\tProgram exiting. Thank you!" << endl;
 
-  
-
+  return 0;
 
     
 }
-
-
-
-
-
-
