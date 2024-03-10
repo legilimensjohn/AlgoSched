@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> 
 #include <limits>
 #include <cstdlib>
 #include <iomanip>
@@ -182,24 +182,24 @@ for(i = 0; i < n; i++) {
 }
 
 //Calculating average waiting and turnaround times
-float avgWaitingTime = 0, avgTurnaroundTime = 0;
-for (i = 0; i < n; i++) {
-  avgWaitingTime += processes[i].waitingTime;
-  avgTurnaroundTime += processes[i].turnaroundTime;
-}
-avgWaitingTime /= n;
-avgTurnaroundTime /= n;
-cout << endl << endl;
+  float avgWaitingTime = 0, avgTurnaroundTime = 0;
+  for (i = 0; i < n; i++) {
+    avgWaitingTime += processes[i].waitingTime;
+    avgTurnaroundTime += processes[i].turnaroundTime;
+  }
+  avgWaitingTime /= n;
+  avgTurnaroundTime /= n;
+  cout << endl << endl;
 
 //Display average waiting time and average turnaround time
-cout << "\t\tAverage Waiting Time        : " << avgWaitingTime << endl;
-cout << "\t\tAverage Turn Around Time    : " << avgTurnaroundTime << endl;
+  cout << "\t\tAverage Waiting Time        : " << avgWaitingTime << endl;
+  cout << "\t\tAverage Turn Around Time    : " << avgTurnaroundTime << endl;
 
 //Function for Shortest Remaining Time First (SRTF)
 void srtfScheduling (int n) {
-  int currentTime = 0;
-  int completed = 0;
-  int shortestRemainingTime = -1;
+    int currentTime = 0;
+    int completed = 0;
+    int shortestRemainingTime = -1;
 
   //Loop until all processes are completed
   while (completed !=n) {
